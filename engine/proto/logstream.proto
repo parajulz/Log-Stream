@@ -1,0 +1,58 @@
+// proto3 is the current version of the protobuf language
+syntax = "proto3";
+
+// package name — prevents naming conflicts if you have multiple proto files
+package logstream;
+
+// ─────────────────────────────────────────────
+// the service — defines what functions C++ exposes to Python
+// ─────────────────────────────────────────────
+
+service LogStreamService {
+    // Python calls this to send a log event to C++
+    rpc Ingest(LogEvent) returns (IngestResponse);
+
+    // Python calls this to search stored logs
+    rpc Query(QueryRequest) returns (QueryResponse);
+
+    // Python calls this to get current performance metrics
+    rpc GetMetrics(MetricsRequest) returns (MetricsResponse);
+}
+
+// ─────────────────────────────────────────────
+// messages — defines what each piece of data looks like
+// ─────────────────────────────────────────────
+
+// one log event — matches the LogEvent struct in ring_buffer.h
+message LogEvent {
+    string level = 1;       // "error", "warning", "info"
+    string message = 2;     // the actual log message
+    int64 timestamp = 3;    // unix timestamp in milliseconds
+}
+
+// response after ingesting an event
+message IngestResponse {
+    bool success = 1;       // true if written to buffer, false if buffer full
+}
+
+// a search query — find all events where field equals value
+message QueryRequest {
+    string field = 1;       // e.g. "level"
+    string value = 2;       // e.g. "error"
+}
+
+// response to a query — list of matching events
+message QueryResponse {
+    repeated LogEvent events = 1;   // repeated = a list, like an array
+}
+
+// empty request — we just want current metrics, no input needed
+message MetricsRequest {}
+
+// current performance metrics
+message MetricsResponse {
+    double events_per_second = 1;   // current ingestion rate
+    double p99_latency_us = 2;      // P99 write latency in microseconds
+    uint64 total_events = 3;        // total events ingested since startup
+    uint64 buffer_size = 4;         // current number of events in buffer
+}
