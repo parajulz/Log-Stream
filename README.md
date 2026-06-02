@@ -2,7 +2,7 @@
 
 A high-throughput log ingestion and query engine built in C++20, with a Python API layer and a live React dashboard. Designed to absorb millions of log events per second that would choke a general-purpose database.
 
-![Dashboard](screenshots/dashboard.png)
+![Full dashboard](screenshots/dashboard.png)
 
 ---
 
@@ -55,7 +55,8 @@ GET /metrics  →  WebSocket  →  React dashboard
 
 The naive solution uses a mutex — a lock that serializes all writers. At 16+ concurrent threads, mutex throughput degrades 78% as threads spend most of their time waiting. The lock-free implementation uses CPU-level atomic compare-and-swap operations so threads never block each other, degrading only 53% under the same load.
 
-![Benchmark](screenshots/benchmark.png)
+![Benchmark comparison](screenshots/benchmark.png)
+![Benchmark at 32 threads](screenshots/benchmark_tooltip.png)
 
 **zstd compression**
 
@@ -80,7 +81,8 @@ The Python API translates HTTP to gRPC for the C++ engine. Binary protocol over 
 
 ## Live dashboard
 
-![Live metrics](screenshots/dashboard.png)
+![Live metrics](screenshots/metrics.png)
+![P99 latency](screenshots/latency.png)
 
 The React dashboard streams real-time metrics via WebSocket:
 
@@ -88,8 +90,6 @@ The React dashboard streams real-time metrics via WebSocket:
 - **P99 write latency** — actual ring buffer write time in microseconds
 - **Mutex vs lock-free throughput** — benchmark results from Google Benchmark showing degradation curves across 1-32 threads
 - **Log search** — query stored events by field and value
-
-![Latency](screenshots/latency.png)
 
 ---
 
@@ -197,7 +197,7 @@ logstream/
 │       │   └── LogSearch.tsx
 │       └── hooks/
 │           └── useMetrics.ts
-├── app_simulation.py             # multi-threaded load simulator
+├── app_simulation.py        # multi-threaded load simulator
 └── docker-compose.yml       # starts all three layers
 ```
 
