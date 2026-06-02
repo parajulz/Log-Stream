@@ -55,7 +55,7 @@ GET /metrics  →  WebSocket  →  React dashboard
 
 The naive solution uses a mutex — a lock that serializes all writers. At 16+ concurrent threads, mutex throughput degrades 78% as threads spend most of their time waiting. The lock-free implementation uses CPU-level atomic compare-and-swap operations so threads never block each other, degrading only 53% under the same load.
 
-![Benchmark comparison](screenshots/benchmark.png)
+![Benchmark comparison](screenshots/benchmarks.png)
 ![Benchmark at 32 threads](screenshots/benchmark_tooltip.png)
 
 **zstd compression**
