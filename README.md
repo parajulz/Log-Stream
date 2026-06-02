@@ -16,22 +16,25 @@ LogStream receives log events from any application over HTTP, writes them into a
 
 ## Architecture
 
+```
 Any application
-↓
+      ↓
 POST /ingest  (HTTP)
-↓
+      ↓
 Python FastAPI  (REST → gRPC translation)
-↓
+      ↓
 C++ gRPC server
-↓
+      ↓
 Lock-free ring buffer  (RAM)
-↓
+      ↓
 Flusher thread  →  zstd compression  →  disk (.zst batch files)
-↓
+      ↓
 Inverted index  (field:value → event IDs)
-↓
+      ↓
 GET /query  →  search results
+
 GET /metrics  →  WebSocket  →  React dashboard
+```
 
 ---
 
@@ -61,8 +64,11 @@ Events are accumulated in the ring buffer then flushed to disk in batches compre
 **Inverted index**
 
 As events are flushed, an inverted index maps field values to event IDs:
+
+```
 "level:error"   → [1, 45, 892, 4821 ...]
 "level:warning" → [3, 12, 500 ...]
+```
 
 Queries return results in O(1) lookup time rather than scanning every stored event.
 
@@ -107,11 +113,13 @@ Mutex degrades 78-81% at 16-32 threads. Lock-free degrades 53%. The advantage of
 ## Run locally
 
 **Option 1 — Docker (recommended):**
+
 ```bash
 git clone https://github.com/parajulz/logstream
 cd logstream
 docker compose up --build
 ```
+
 Open `http://localhost:5173`
 
 **Option 2 — Manual (three terminals):**
@@ -144,7 +152,7 @@ curl -X POST http://localhost:8000/ingest \
   -d '{"level": "error", "message": "payment failed", "timestamp": 1717200000}'
 ```
 
-**Run load test (to see live dashboard data):**
+**Run load test to see live dashboard data:**
 ```bash
 python load_test.py
 ```
@@ -158,6 +166,7 @@ curl "http://localhost:8000/query?field=level&value=error"
 
 ## Project structure
 
+```
 logstream/
 ├── engine/                  # C++20 ingestion engine
 │   ├── include/
@@ -190,6 +199,7 @@ logstream/
 │           └── useMetrics.ts
 ├── load_test.py             # multi-threaded load simulator
 └── docker-compose.yml       # starts all three layers
+```
 
 ---
 
