@@ -1,1 +1,0 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/logstream_bench.dir/bench/bench_buffer.cpp.o CMakeFiles/logstream_bench.dir/src/ring_buffer.cpp.o -o logstream_bench  /opt/homebrew/lib/libbenchmark.a

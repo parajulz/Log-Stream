@@ -1,4 +1,0 @@
-/Users/anuskap/logstream/engine/build/CMakeFiles/logstream_engine.dir
-/Users/anuskap/logstream/engine/build/CMakeFiles/logstream_bench.dir
-/Users/anuskap/logstream/engine/build/CMakeFiles/edit_cache.dir
-/Users/anuskap/logstream/engine/build/CMakeFiles/rebuild_cache.dir
