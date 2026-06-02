@@ -1,0 +1,2 @@
+engine/proto/*.pb.cc linguist-generated=true
+engine/proto/*.pb.h linguist-generated=true
