@@ -64,10 +64,12 @@ CMAKE_BINARY_DIR = /Users/anuskap/logstream/engine/build
 
 # The main recursive "all" target.
 all: CMakeFiles/logstream_engine.dir/all
+all: CMakeFiles/logstream_bench.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/logstream_engine.dir/codegen
+codegen: CMakeFiles/logstream_bench.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -76,6 +78,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/logstream_engine.dir/clean
+clean: CMakeFiles/logstream_bench.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -85,12 +88,12 @@ clean: CMakeFiles/logstream_engine.dir/clean
 CMakeFiles/logstream_engine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target logstream_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=4,5,6,7,8,9,10 "Built target logstream_engine"
 .PHONY : CMakeFiles/logstream_engine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/logstream_engine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anuskap/logstream/engine/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anuskap/logstream/engine/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/logstream_engine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anuskap/logstream/engine/build/CMakeFiles 0
 .PHONY : CMakeFiles/logstream_engine.dir/rule
@@ -102,13 +105,45 @@ logstream_engine: CMakeFiles/logstream_engine.dir/rule
 # codegen rule for target.
 CMakeFiles/logstream_engine.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target logstream_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=4,5,6,7,8,9,10 "Finished codegen for target logstream_engine"
 .PHONY : CMakeFiles/logstream_engine.dir/codegen
 
 # clean rule for target.
 CMakeFiles/logstream_engine.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/clean
 .PHONY : CMakeFiles/logstream_engine.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/logstream_bench.dir
+
+# All Build rule for target.
+CMakeFiles/logstream_bench.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=1,2,3 "Built target logstream_bench"
+.PHONY : CMakeFiles/logstream_bench.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/logstream_bench.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anuskap/logstream/engine/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/logstream_bench.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anuskap/logstream/engine/build/CMakeFiles 0
+.PHONY : CMakeFiles/logstream_bench.dir/rule
+
+# Convenience name for target.
+logstream_bench: CMakeFiles/logstream_bench.dir/rule
+.PHONY : logstream_bench
+
+# codegen rule for target.
+CMakeFiles/logstream_bench.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target logstream_bench"
+.PHONY : CMakeFiles/logstream_bench.dir/codegen
+
+# clean rule for target.
+CMakeFiles/logstream_bench.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/clean
+.PHONY : CMakeFiles/logstream_bench.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

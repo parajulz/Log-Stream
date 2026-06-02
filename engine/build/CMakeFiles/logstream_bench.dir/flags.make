@@ -6,7 +6,7 @@ CXX_DEFINES = -DBENCHMARK_STATIC_DEFINE
 
 CXX_INCLUDES = -I/Users/anuskap/logstream/engine/include -isystem /opt/homebrew/include
 
-CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -Wall -Wextra -O3
+CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -O3
 
-CXX_FLAGS = -std=gnu++20 -arch arm64 -Wall -Wextra -O3
+CXX_FLAGS = -std=gnu++20 -arch arm64 -O3
 

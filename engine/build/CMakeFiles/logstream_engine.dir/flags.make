@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DPROTOBUF_USE_DLLS
 
-CXX_INCLUDES = -I/Users/anuskap/logstream/engine/include -I/Users/anuskap/logstream/engine/proto -I/Users/anuskap/logstream/engine -isystem /Users/anuskap/miniconda3/include -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@3/3.6.2/include
+CXX_INCLUDES = -I/Users/anuskap/logstream/engine/include -I/Users/anuskap/logstream/engine/proto -I/Users/anuskap/logstream/engine -isystem /opt/homebrew/include -isystem /Users/anuskap/miniconda3/include -isystem /opt/homebrew/Cellar/openssl@3/3.6.2/include
 
 CXX_FLAGSarm64 = -std=gnu++20 -arch arm64
 

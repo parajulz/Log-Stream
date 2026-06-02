@@ -17,20 +17,23 @@ import logstream_pb2_grpc
 app = FastAPI(title = "LogStream API")
 
 # enable React to call this API from the browser
-# without this, the browser would block the requests from a differnet port 
+# without this, the browser would block the requests from a different port 
 
-#CORS - allows React on 5175 to call this API on 8000 without being blocked by the browser's same-origin policy
+#CORS - allows React on 5173 to call this API on 8000 without being blocked by the browser's same-origin policy
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Vite's default port
+    allow_origins=["*"],  # allow all origins so Docker containers can talk to each other
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-#connect to the C++ engine via gRPC
-#the channel listens on port 50051 
-channel = grpc.insecure_channel('localhost:50051')
-stub = logstream_pb2_grpc.LogStreamServiceStub(channel) 
+# connect to the C++ engine via gRPC
+# reads from environment variables so it works both locally and in Docker
+# locally: ENGINE_HOST=localhost, in Docker: ENGINE_HOST=engine (service name)
+engine_host = os.getenv("ENGINE_HOST", "localhost")
+engine_port = os.getenv("ENGINE_PORT", "50051")
+channel = grpc.insecure_channel(f"{engine_host}:{engine_port}")
+stub = logstream_pb2_grpc.LogStreamServiceStub(channel)
 
 # import the routes -- each route file handles one endpoint 
 from routes import ingest, query, metrics 

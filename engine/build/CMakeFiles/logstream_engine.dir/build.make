@@ -100,10 +100,38 @@ CMakeFiles/logstream_engine.dir/src/ring_buffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/logstream_engine.dir/src/ring_buffer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anuskap/logstream/engine/src/ring_buffer.cpp -o CMakeFiles/logstream_engine.dir/src/ring_buffer.cpp.s
 
+CMakeFiles/logstream_engine.dir/src/flusher.cpp.o: CMakeFiles/logstream_engine.dir/flags.make
+CMakeFiles/logstream_engine.dir/src/flusher.cpp.o: /Users/anuskap/logstream/engine/src/flusher.cpp
+CMakeFiles/logstream_engine.dir/src/flusher.cpp.o: CMakeFiles/logstream_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/logstream_engine.dir/src/flusher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/logstream_engine.dir/src/flusher.cpp.o -MF CMakeFiles/logstream_engine.dir/src/flusher.cpp.o.d -o CMakeFiles/logstream_engine.dir/src/flusher.cpp.o -c /Users/anuskap/logstream/engine/src/flusher.cpp
+
+CMakeFiles/logstream_engine.dir/src/flusher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/logstream_engine.dir/src/flusher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anuskap/logstream/engine/src/flusher.cpp > CMakeFiles/logstream_engine.dir/src/flusher.cpp.i
+
+CMakeFiles/logstream_engine.dir/src/flusher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/logstream_engine.dir/src/flusher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anuskap/logstream/engine/src/flusher.cpp -o CMakeFiles/logstream_engine.dir/src/flusher.cpp.s
+
+CMakeFiles/logstream_engine.dir/src/index.cpp.o: CMakeFiles/logstream_engine.dir/flags.make
+CMakeFiles/logstream_engine.dir/src/index.cpp.o: /Users/anuskap/logstream/engine/src/index.cpp
+CMakeFiles/logstream_engine.dir/src/index.cpp.o: CMakeFiles/logstream_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/logstream_engine.dir/src/index.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/logstream_engine.dir/src/index.cpp.o -MF CMakeFiles/logstream_engine.dir/src/index.cpp.o.d -o CMakeFiles/logstream_engine.dir/src/index.cpp.o -c /Users/anuskap/logstream/engine/src/index.cpp
+
+CMakeFiles/logstream_engine.dir/src/index.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/logstream_engine.dir/src/index.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anuskap/logstream/engine/src/index.cpp > CMakeFiles/logstream_engine.dir/src/index.cpp.i
+
+CMakeFiles/logstream_engine.dir/src/index.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/logstream_engine.dir/src/index.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anuskap/logstream/engine/src/index.cpp -o CMakeFiles/logstream_engine.dir/src/index.cpp.s
+
 CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o: CMakeFiles/logstream_engine.dir/flags.make
 CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o: /Users/anuskap/logstream/engine/proto/logstream.pb.cc
 CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o: CMakeFiles/logstream_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o -MF CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o.d -o CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o -c /Users/anuskap/logstream/engine/proto/logstream.pb.cc
 
 CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.i: cmake_force
@@ -117,7 +145,7 @@ CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.s: cmake_force
 CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o: CMakeFiles/logstream_engine.dir/flags.make
 CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o: /Users/anuskap/logstream/engine/proto/logstream.grpc.pb.cc
 CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o: CMakeFiles/logstream_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o -MF CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o.d -o CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o -c /Users/anuskap/logstream/engine/proto/logstream.grpc.pb.cc
 
 CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.i: cmake_force
@@ -132,6 +160,8 @@ CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.s: cmake_force
 logstream_engine_OBJECTS = \
 "CMakeFiles/logstream_engine.dir/src/main.cpp.o" \
 "CMakeFiles/logstream_engine.dir/src/ring_buffer.cpp.o" \
+"CMakeFiles/logstream_engine.dir/src/flusher.cpp.o" \
+"CMakeFiles/logstream_engine.dir/src/index.cpp.o" \
 "CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o" \
 "CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o"
 
@@ -140,10 +170,12 @@ logstream_engine_EXTERNAL_OBJECTS =
 
 logstream_engine: CMakeFiles/logstream_engine.dir/src/main.cpp.o
 logstream_engine: CMakeFiles/logstream_engine.dir/src/ring_buffer.cpp.o
+logstream_engine: CMakeFiles/logstream_engine.dir/src/flusher.cpp.o
+logstream_engine: CMakeFiles/logstream_engine.dir/src/index.cpp.o
 logstream_engine: CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.o
 logstream_engine: CMakeFiles/logstream_engine.dir/proto/logstream.grpc.pb.cc.o
 logstream_engine: CMakeFiles/logstream_engine.dir/build.make
-logstream_engine: /Users/anuskap/miniconda3/lib/libzstd.a
+logstream_engine: /opt/homebrew/lib/libzstd.dylib
 logstream_engine: /opt/homebrew/lib/libgrpc++.1.80.0.dylib
 logstream_engine: /opt/homebrew/lib/libprotobuf.35.0.0.dylib
 logstream_engine: /opt/homebrew/lib/libabsl_die_if_null.2601.0.0.dylib
@@ -246,7 +278,7 @@ logstream_engine: /opt/homebrew/Cellar/openssl@3/3.6.2/lib/libssl.dylib
 logstream_engine: /opt/homebrew/Cellar/openssl@3/3.6.2/lib/libcrypto.dylib
 logstream_engine: /opt/homebrew/lib/libaddress_sorting.53.0.0.dylib
 logstream_engine: CMakeFiles/logstream_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable logstream_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/anuskap/logstream/engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable logstream_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/logstream_engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

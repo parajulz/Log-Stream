@@ -8,11 +8,14 @@ project(logstream CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# find required libraries installed via homebrew
+# find required libraries — works on both Mac (Homebrew) and Linux (Ubuntu)
 find_package(Threads REQUIRED)
-find_package(zstd REQUIRED)
-find_package(gRPC REQUIRED)
 find_package(Protobuf REQUIRED)
+find_package(PkgConfig REQUIRED)
+
+# use pkg-config to find gRPC — more portable than find_package for gRPC
+pkg_check_modules(GRPC REQUIRED grpc++)
+pkg_check_modules(ZSTD REQUIRED libzstd)
 
 # ─────────────────────────────────────────────
 # main engine executable
@@ -21,6 +24,8 @@ find_package(Protobuf REQUIRED)
 add_executable(logstream_engine
     src/main.cpp
     src/ring_buffer.cpp
+    src/flusher.cpp
+    src/index.cpp
     proto/logstream.pb.cc
     proto/logstream.grpc.pb.cc
 )
@@ -29,11 +34,43 @@ target_include_directories(logstream_engine PRIVATE
     include
     proto
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${GRPC_INCLUDE_DIRS}
+    ${ZSTD_INCLUDE_DIRS}
 )
 
 target_link_libraries(logstream_engine PRIVATE
     Threads::Threads
-    zstd::libzstd_static
-    gRPC::grpc++
+    ${GRPC_LINK_LIBRARIES}
+    ${ZSTD_LINK_LIBRARIES}
     protobuf::libprotobuf
+    -lgrpc++
+    -lgrpc
+    -lzstd
 )
+
+# ─────────────────────────────────────────────
+# benchmark executable — only build if benchmark library is available
+# ─────────────────────────────────────────────
+
+find_package(benchmark QUIET)
+
+if(benchmark_FOUND)
+    add_executable(logstream_bench
+        bench/bench_buffer.cpp
+        src/ring_buffer.cpp
+    )
+
+    target_include_directories(logstream_bench PRIVATE
+        include
+        ${GRPC_INCLUDE_DIRS}
+    )
+
+    target_link_libraries(logstream_bench PRIVATE
+        benchmark::benchmark
+        Threads::Threads
+    )
+
+    target_compile_options(logstream_bench PRIVATE
+        -O3
+    )
+endif()

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+
+  # C++ engine — starts first
+  engine:
+    build:
+      context: ./engine
+      dockerfile: Dockerfile
+    ports:
+      - "50051:50051"    # gRPC port
+    volumes:
+      - ./data:/app/build/data    # persist batch files to your machine
+    restart: unless-stopped
+
+  # Python API — starts after engine
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"      # REST API port
+    depends_on:
+      - engine            # wait for engine to start first
+    environment:
+      - ENGINE_HOST=engine    # tells API where to find the engine
+      - ENGINE_PORT=50051
+    restart: unless-stopped
+
+  # React frontend — built and served as static files
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host"
+    depends_on:
+      - api

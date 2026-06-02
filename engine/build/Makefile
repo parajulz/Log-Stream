@@ -129,6 +129,43 @@ logstream_engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/build
 .PHONY : logstream_engine/fast
 
+#=============================================================================
+# Target rules for targets named logstream_bench
+
+# Build rule for target.
+logstream_bench: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 logstream_bench
+.PHONY : logstream_bench
+
+# fast build rule for target.
+logstream_bench/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/build
+.PHONY : logstream_bench/fast
+
+bench/bench_buffer.o: bench/bench_buffer.cpp.o
+.PHONY : bench/bench_buffer.o
+
+# target to build an object file
+bench/bench_buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/bench/bench_buffer.cpp.o
+.PHONY : bench/bench_buffer.cpp.o
+
+bench/bench_buffer.i: bench/bench_buffer.cpp.i
+.PHONY : bench/bench_buffer.i
+
+# target to preprocess a source file
+bench/bench_buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/bench/bench_buffer.cpp.i
+.PHONY : bench/bench_buffer.cpp.i
+
+bench/bench_buffer.s: bench/bench_buffer.cpp.s
+.PHONY : bench/bench_buffer.s
+
+# target to generate assembly for a file
+bench/bench_buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/bench/bench_buffer.cpp.s
+.PHONY : bench/bench_buffer.cpp.s
+
 proto/logstream.grpc.pb.o: proto/logstream.grpc.pb.cc.o
 .PHONY : proto/logstream.grpc.pb.o
 
@@ -177,6 +214,54 @@ proto/logstream.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/proto/logstream.pb.cc.s
 .PHONY : proto/logstream.pb.cc.s
 
+src/flusher.o: src/flusher.cpp.o
+.PHONY : src/flusher.o
+
+# target to build an object file
+src/flusher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/src/flusher.cpp.o
+.PHONY : src/flusher.cpp.o
+
+src/flusher.i: src/flusher.cpp.i
+.PHONY : src/flusher.i
+
+# target to preprocess a source file
+src/flusher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/src/flusher.cpp.i
+.PHONY : src/flusher.cpp.i
+
+src/flusher.s: src/flusher.cpp.s
+.PHONY : src/flusher.s
+
+# target to generate assembly for a file
+src/flusher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/src/flusher.cpp.s
+.PHONY : src/flusher.cpp.s
+
+src/index.o: src/index.cpp.o
+.PHONY : src/index.o
+
+# target to build an object file
+src/index.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/src/index.cpp.o
+.PHONY : src/index.cpp.o
+
+src/index.i: src/index.cpp.i
+.PHONY : src/index.i
+
+# target to preprocess a source file
+src/index.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/src/index.cpp.i
+.PHONY : src/index.cpp.i
+
+src/index.s: src/index.cpp.s
+.PHONY : src/index.s
+
+# target to generate assembly for a file
+src/index.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/src/index.cpp.s
+.PHONY : src/index.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -207,6 +292,7 @@ src/ring_buffer.o: src/ring_buffer.cpp.o
 # target to build an object file
 src/ring_buffer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/src/ring_buffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/src/ring_buffer.cpp.o
 .PHONY : src/ring_buffer.cpp.o
 
 src/ring_buffer.i: src/ring_buffer.cpp.i
@@ -215,6 +301,7 @@ src/ring_buffer.i: src/ring_buffer.cpp.i
 # target to preprocess a source file
 src/ring_buffer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/src/ring_buffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/src/ring_buffer.cpp.i
 .PHONY : src/ring_buffer.cpp.i
 
 src/ring_buffer.s: src/ring_buffer.cpp.s
@@ -223,6 +310,7 @@ src/ring_buffer.s: src/ring_buffer.cpp.s
 # target to generate assembly for a file
 src/ring_buffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_engine.dir/build.make CMakeFiles/logstream_engine.dir/src/ring_buffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logstream_bench.dir/build.make CMakeFiles/logstream_bench.dir/src/ring_buffer.cpp.s
 .PHONY : src/ring_buffer.cpp.s
 
 # Help Target
@@ -233,13 +321,23 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... logstream_bench"
 	@echo "... logstream_engine"
+	@echo "... bench/bench_buffer.o"
+	@echo "... bench/bench_buffer.i"
+	@echo "... bench/bench_buffer.s"
 	@echo "... proto/logstream.grpc.pb.o"
 	@echo "... proto/logstream.grpc.pb.i"
 	@echo "... proto/logstream.grpc.pb.s"
 	@echo "... proto/logstream.pb.o"
 	@echo "... proto/logstream.pb.i"
 	@echo "... proto/logstream.pb.s"
+	@echo "... src/flusher.o"
+	@echo "... src/flusher.i"
+	@echo "... src/flusher.s"
+	@echo "... src/index.o"
+	@echo "... src/index.i"
+	@echo "... src/index.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
