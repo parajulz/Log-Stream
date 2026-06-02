@@ -154,7 +154,7 @@ curl -X POST http://localhost:8000/ingest \
 
 **Run load test to see live dashboard data:**
 ```bash
-python load_test.py
+python app_simulation.py
 ```
 
 **Search logs:**
@@ -197,7 +197,7 @@ logstream/
 │       │   └── LogSearch.tsx
 │       └── hooks/
 │           └── useMetrics.ts
-├── load_test.py             # multi-threaded load simulator
+├── app_simulation.py             # multi-threaded load simulator
 └── docker-compose.yml       # starts all three layers
 ```
 
