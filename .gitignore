@@ -1,0 +1,4 @@
+.venv/
+engine/build/
+*.zst
+data/
